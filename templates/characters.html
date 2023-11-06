@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% block title %} Zelda Characters {% endblock %} {%
+block content %}
+<h1 class="text-center mt-3">Characters & Monsters</h1>
+<div class="container">
+  <div class="mx-4">
+    <ul class="nav nav-tabs">
+      <li class="nav-item active">
+        <a class="nav-link" data-toggle="tab" href="#characters">Characters</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#monsters">Monsters</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#bosses">Bosses</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="tab-content">
+    <div id="characters" class="container tab-pane active">
+      {% for c in characters %}
+      <div class="card m-3 mb-4">
+        <h5 class="card-header">{{c.name}}</h5>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text">{{c.description}}</p>
+
+          {% if c.race != null %}
+          <h6>Race: {{c.race}}</h6>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div id="monsters" class="container tab-pane fade">
+      {% for m in monsters %}
+      <div class="card m-3 mb-4">
+        <h5 class="card-header">{{m.name}}</h5>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text">{{m.description}}</p>
+
+          {% if m.race != null %}
+          <h6>Race: {{m.race}}</h6>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div id="bosses" class="container tab-pane fade">
+      <div class="mx-5 mt-4">
+        {% for b in bosses %}
+        <div class="card m-3 mb-4">
+          <h5 class="card-header">{{b.name}}</h5>
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">{{b.description}}</p>
+
+            {% if b.race != null %}
+            <h6>Race: {{b.race}}</h6>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

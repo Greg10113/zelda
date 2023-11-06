@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% block title %} BOTW {% endblock %} {% block content
+%}
+<style>
+  .nav {
+    width: 40rem;
+    margin: auto;
+  }
+</style>
+<h1 class="text-center mt-3">Breathe Of The Wild Compendium</h1>
+<div class="container">
+  <div class="mx-5">
+    <ul class="nav nav-tabs nav-fill">
+      <li class="nav-item active">
+        <a class="nav-link" data-toggle="tab" href="#creatures">Creatures</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#equipment">Equipment</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#materials">Materials</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#monsters">Monsters</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#treasure">Treasure</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="tab-content">
+    <div id="creatures" class="container tab-pane active">
+      {% for item in creatures %} {% include 'includes/items.html' %} {% endfor
+      %}
+    </div>
+
+    <div id="equipment" class="container tab-pane fade">
+      {% for item in equipment %} {% include 'includes/items.html' %} {% endfor
+      %}
+    </div>
+
+    <div id="materials" class="container tab-pane fade">
+      <div class="mx-5 mt-4">
+        {% for item in materials %} {% include 'includes/items.html' %} {%
+        endfor %}
+      </div>
+    </div>
+
+    <div id="monsters" class="container tab-pane fade">
+      <div class="mx-5 mt-4">
+        {% for item in monsters %} {% include 'includes/items.html' %} {% endfor
+        %}
+      </div>
+    </div>
+
+    <div id="treasure" class="container tab-pane fade">
+      <div class="mx-5 mt-4">
+        {% for item in treasure %} {% include 'includes/items.html' %} {% endfor
+        %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- Creatures
+Equipment
+Materials
+Monsters
+Treasure -->

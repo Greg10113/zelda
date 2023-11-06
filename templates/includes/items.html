@@ -1,0 +1,41 @@
+<style>
+  .card,
+  .card img {
+    width: 40rem;
+  }
+</style>
+
+<div class="card mb-3 mt-4 mx-auto">
+  <img src="{{item.image}}" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">{{item.name.title()}}</h5>
+
+    {% if item.dlc %}
+    <p>
+      DLC: {% for i in item.dlc %}
+      <span class="card-text">"{{i}}"</span>
+      {% endfor %}
+    </p>
+    {% endif %}
+    <p class="card-text">{{item.description}}</p>
+
+
+    {% if item.common_locations %}
+    <h6>
+      Common Locations: {% for i in item.common_locations %}
+      <span class="card-text">"{{i}}"</span>
+      {% endfor %}
+    </h6>
+    {% endif %}
+
+    {% if item.drops %}
+    <p>
+      Drops: {% for i in item.drops %}
+      <span class="card-text">"{{i}}"</span>
+      {% endfor %}
+    </p>
+    {% endif %}
+     
+    </p>
+  </div>
+</div>

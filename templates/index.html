@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+<!--  -->
+{% block title %} Zelda Games {% endblock %}
+<!--  -->
+{% block content %}
+<!--  -->
+<h1 class="text-center mt-3">Zelda Games</h1>
+<div class="container">
+  <div class="mx-4">
+    <ul class="nav nav-tabs">
+      <li class="nav-item active">
+        <a class="nav-link" data-toggle="tab" href="#nintendo">By Nintendo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#not_nintendo"
+          >Other Developers</a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <div class="tab-content">
+    <div id="nintendo" class="container tab-pane active">
+      {% for n in nintendo_dev %}
+      <div class="card m-3 mb-4">
+        <h5 class="card-header">Released - {{n.released_date}}</h5>
+        <div class="card-body">
+          <h5 class="card-title">{{n.name}}</h5>
+          <p class="card-text">{{n.description}}</p>
+          <h6>Developed by: <span class="fst-normal">{{n.developer}}</span></h6>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div id="not_nintendo" class="container tab-pane fade">
+      {% for n in not_nintendo_dev %}
+      <div class="card m-3 mb-4">
+        <h5 class="card-header">Released - {{n.released_date}}</h5>
+        <div class="card-body">
+          <h5 class="card-title">{{n.name}}</h5>
+          <p class="card-text">{{n.description}}</p>
+          <h6>Developed by: <span class="fst-normal">{{n.developer}}</span></h6>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div id="" class="container tab-pane fade"></div>
+  </div>
+  <div class="mx-5 mt-4"></div>
+</div>
+{% endblock %}
